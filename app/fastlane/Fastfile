@@ -1,0 +1,98 @@
+fastlane_version "1.104.0"
+
+default_platform :ios
+
+# Set by build environment
+# FL_HOCKEY_API_TOKEN
+# RZ_KEYCHAIN_PASSWORD
+#ENV['SLACK_URL'] = 'https://hooks.slack.com/services/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'
+
+ENV['RZ_ARTIFACTS'] ||= ENV['CIRCLE_ARTIFACTS'] || './build'
+ENV['RZ_TEST_REPORTS'] ||= ENV['CIRCLE_TEST_REPORTS'] || './build'
+ENV['FASTLANE_XCODE_LIST_TIMEOUT'] = '120'
+ENV['CI_BUILD'] = 'yes'
+ENV['GYM_OUTPUT_NAME'] = 'FieldofDreams'
+ENV['FL_HOCKEY_IPA'] = "#{ENV['RZ_ARTIFACTS']}/#{ENV['GYM_OUTPUT_NAME']}.ipa"
+ENV['FL_HOCKEY_NOTIFY'] = '0'
+
+platform :ios do
+
+  before_all do
+    if ENV['RZ_ARTIFACTS'] && ENV['RZ_ARTIFACTS'].length > 0
+      sh 'rm -rf $RZ_ARTIFACTS && mkdir $RZ_ARTIFACTS'
+    end
+    unlock_keychain(path: './Signing/Raizlabs-FieldofDreams.keychain', password: ENV['RZ_KEYCHAIN_PASSWORD'] )
+  end
+
+  desc "Runs tests"
+  lane :test do
+    scan(
+      output_types: 'junit',
+      scheme: 'FieldofDreams',
+      output_directory: "#{ENV['RZ_TEST_REPORTS']}",
+      buildlog_path: "#{ENV['RZ_ARTIFACTS']}",
+    )
+    if !ENV['CIRCLE_TEST_REPORTS'].nil?
+      # CircleCI requires the "xml" extension for test reporting
+      puts "Fixing JUnit report name"
+      sh "mv #{ENV['RZ_TEST_REPORTS']}/report.junit #{ENV['RZ_TEST_REPORTS']}/report.xml"
+    end
+  end
+
+  desc "Builds and submits a Develop release to Hockey"
+  lane :develop do
+    build("develop-FieldofDreams", 'enterprise')
+    hockey(public_identifier: 'ZZHOCKEY_DEVELOP_IDZZ')
+    # upload_symbols_to_crashlytics(:api_token => 'ZZCRASHLYTICS_API_TOKEN_DEVELOPZZ')
+    slack(message: "Successfully uploaded build #{build_number} to develop", success: true)
+  end
+
+  desc "Builds and submits a Sprint release to Hockey"
+  lane :sprint do
+    build("sprint-FieldofDreams", 'enterprise')
+    hockey(public_identifier: 'ZZHOCKEY_SPRINT_IDZZ')
+    # upload_symbols_to_crashlytics(:api_token => 'ZZCRASHLYTICS_API_TOKEN_SPRINTZZ')
+    slack(message: "Successfully uploaded build #{build_number} to sprint", success: true)
+  end
+
+  # desc "Builds and submits an App Store release to TestFlight"
+  lane :beta do
+    build("appStore-FieldofDreams", 'app-store')
+    pilot(
+    	distribute_external: false,
+      	skip_waiting_for_build_processing: true,
+    )
+    # upload_symbols_to_crashlytics(:api_token => 'ZZCRASHLYTICS_API_TOKEN_APPSTOREZZ')
+    slack(message: "Successfully uploaded build #{build_number} to test flight", success: true)
+  end
+
+  # Helpers ----------------------
+
+  desc "Update Swiftgen"
+  lane :swiftgen do
+    sh "cd .. && Pods/SwiftGen/bin/swiftgen strings --template swift3 --enumName Localized --output 'FieldofDreams/Application/Generated/Localized.swift' 'FieldofDreams/Resources/Localizable.strings'"
+    sh "cd .. && Pods/SwiftGen/bin/swiftgen images --template swift3 --enumName Asset --output FieldofDreams/Application/Generated/UIImage+Asset.swift FieldofDreams/Resources/Assets.xcassets"
+  end
+
+  desc "Sync Project and Directory Structure"
+  lane :synx do
+    sh "cd .. && synx FieldofDreams.xcodeproj"
+  end
+
+  def build(scheme, export_method)
+    gym(
+      output_directory: "#{ENV['RZ_ARTIFACTS']}",
+      output_name: "FieldofDreams",
+      export_method: export_method,
+      scheme: scheme,
+      include_bitcode: false,
+      xcargs: "BUILD_NUMBER=#{build_number}",
+      buildlog_path: "#{ENV['RZ_ARTIFACTS']}",
+    )
+  end
+
+  def build_number
+    `git rev-list HEAD --count`.chomp()
+  end
+
+end

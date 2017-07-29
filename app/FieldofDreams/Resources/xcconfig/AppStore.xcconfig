@@ -1,0 +1,19 @@
+//
+//  AppStore.xcconfig
+//  FieldofDreams
+//
+//  Created by Jay Clark on 11/1/16.
+//  Copyright © 2017 Raizlabs. All rights reserved.
+//
+
+#include "FieldofDreams/Resources/xcconfig/Raizlabs-Account.xcconfig"
+#include "FieldofDreams/Resources/xcconfig/Global.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = // Insert production bundle here
+PRODUCT_NAME = sprint-$(TARGET_NAME)
+DEVELOPMENT_TEAM = xxxxxx // Insert app store TEAM ID here
+
+CODE_SIGN_IDENTITY_FieldofDreams = iPhone Distribution
+PROVISIONING_PROFILE_FieldofDreams = xxxxxx // Insert sprint provisioning profile ID
+
+GA_ENVIRONMENT = production

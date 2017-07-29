@@ -1,0 +1,22 @@
+//
+//  Develop.xcconfig
+//  FieldofDreams
+//
+//  Created by Jay Clark on 11/1/16.
+//  Copyright © 2017 Raizlabs. All rights reserved.
+//
+
+#include "FieldofDreams/Resources/xcconfig/Raizlabs-Account.xcconfig"
+#include "FieldofDreams/Resources/xcconfig/Global.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.FieldofDreams.develop
+PRODUCT_NAME = develop-$(TARGET_NAME)
+DEVELOPMENT_TEAM = XRTVVR644Y // Insert develop TEAM ID here
+
+CODE_SIGN_IDENTITY_FieldofDreams = iPhone Distribution
+PROVISIONING_PROFILE_FieldofDreams = Raizlabs_Generic_Enterprise_Distribution_Profile // Insert develop provisioning profile ID
+// CODE_SIGN_ENTITLEMENTS = FieldofDreams/develop-FieldofDreams.entitlements // Enable to allow custom debug entitlements
+
+FABRIC_API_KEY = $(INTERNAL_FABRIC_API_KEY)
+FABRIC_BUILD_SECRET = $(INTERNAL_BUILD_SECRET)
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = RZINTERNAL

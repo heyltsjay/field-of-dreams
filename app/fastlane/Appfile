@@ -1,0 +1,4 @@
+app_identifier "com.Raizlabs.FieldofDreams" # The bundle identifier of your app
+apple_id "jason.clark@raizlabs.com"
+
+team_id "TEAMID"  # Developer Portal Team ID
