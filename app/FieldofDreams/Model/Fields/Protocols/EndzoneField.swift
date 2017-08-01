@@ -23,9 +23,25 @@ extension EndzoneField {
             (width, endzoneDepth),
 
             (0, endzoneDepth + playingFieldProper),
-            (0, 2 * endzoneDepth + playingFieldProper),
+            (0, length),
             (width, endzoneDepth + playingFieldProper),
-            (width, 2 * endzoneDepth + playingFieldProper),
+            (width, length),
+        ]
+    }
+
+    fileprivate var length: Double {
+        return 2 * endzoneDepth + playingFieldProper
+    }
+
+    var lines: [Line] {
+        return [
+            (start: (0,0), end: (0, length)), // near sideline
+            (start: (0,0), end: (width, 0)), // near baseline
+            (start: (0, endzoneDepth), end: (width, endzoneDepth)), // near endzone
+
+            (start: (width, 0), end: (width, length)), // far sideline
+            (start: (0, length), end: (width, length)), // far baseline
+            (start: (0, endzoneDepth + playingFieldProper), end: (width, endzoneDepth + playingFieldProper)), // far endzone
         ]
     }
 

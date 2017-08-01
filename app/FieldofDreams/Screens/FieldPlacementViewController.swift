@@ -65,6 +65,26 @@ extension FieldPlacementViewController {
                 sceneView.scene.rootNode.addChildNode(cone)
             }
         }
+
+        field.lines.forEach { line in
+            let (x1, y1, x2, y2) = { () -> (Double, Double, Double, Double) in
+                let scaled = [line.start.x, line.start.y, line.end.x, line.end.y].map {
+                    return Measurement<UnitLength>(value: $0, unit: field.unit).converted(to: .meters).value
+                }
+                return (scaled[0], scaled[1], scaled[2], scaled[3])
+            }()
+
+            let line: SCNNode = {
+                let geometry = SCNBox(width: 0.06, height: 0.01, length: CGFloat(hypot(x1-x2, y1-y2)), chamferRadius: 0)
+                let line = SCNNode(geometry: geometry)
+                line.position = origin + SCNVector3(x1, 0, y1)
+                line.rotation = SCNVector4Make(0, 1, 0, Float(atan2(x2-x1, y2-y1)))
+                line.pivot = SCNMatrix4MakeTranslation(0, Float(-geometry.height/2), Float(-geometry.length/2))
+                return line
+            }()
+
+            sceneView.scene.rootNode.addChildNode(line)
+        }
     }
 
 }

@@ -8,8 +8,10 @@
 import Foundation
 
 typealias Point = (x: Double, y: Double)
+typealias Line = (start: Point, end: Point)
 
 protocol Field {
     var unit: UnitLength { get }
     var verticies: [Point] { get }
+    var lines: [Line] { get }
 }
