@@ -55,6 +55,10 @@ extension ARSceneViewController {
         return CGPoint(x: sceneView.bounds.midX, y: sceneView.bounds.midY)
     }
 
+}
+
+extension ARSceneViewController {
+
     func updateFocusSquare() {
         if focusSquare.parent == nil {
             sceneView.scene.rootNode.addChildNode(focusSquare)
@@ -64,7 +68,7 @@ extension ARSceneViewController {
 //            focusSquare.hide()
 //        }
 //        else {
-//            focusSquare.unhide()
+            focusSquare.unhide()
 //        }
         let (worldPos, planeAnchor, _) = worldPositionFromScreenPosition(screenCenter, objectPos: focusSquare.position)
         if let worldPos = worldPos {
