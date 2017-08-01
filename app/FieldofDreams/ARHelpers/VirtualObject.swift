@@ -16,6 +16,7 @@ class VirtualObject: SCNNode {
 	var thumbImage: UIImage!
 	var title: String = ""
 	var modelLoaded: Bool = false
+    var locationTransform: SCNVector3?
 	
 	override init() {
 		super.init()
@@ -35,22 +36,22 @@ class VirtualObject: SCNNode {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func loadModel() {
-		guard let virtualObjectScene = SCNScene(named: "\(modelName).\(fileExtension)", inDirectory: "Models.scnassets/\(modelName)") else {
-			return
-		}
-		
-		let wrapperNode = SCNNode()
-		
-		for child in virtualObjectScene.rootNode.childNodes {
-			child.geometry?.firstMaterial?.lightingModel = .physicallyBased
-			child.movabilityHint = .movable
-			wrapperNode.addChildNode(child)
-		}
-		self.addChildNode(wrapperNode)
-		
-		modelLoaded = true
-	}
+    func loadModel() {
+        guard let virtualObjectScene = SCNScene(named: "\(modelName).\(fileExtension)", inDirectory: "Models.scnassets/\(modelName)") else {
+            return
+        }
+        
+        let wrapperNode = SCNNode()
+        
+        for child in virtualObjectScene.rootNode.childNodes {
+            child.geometry?.firstMaterial?.lightingModel = .physicallyBased
+            child.movabilityHint = .movable
+            wrapperNode.addChildNode(child)
+        }
+        self.addChildNode(wrapperNode)
+        
+        modelLoaded = true
+    }
 	
 	func unloadModel() {
 		for child in self.childNodes {
@@ -74,26 +75,5 @@ extension VirtualObject {
 		}
 		
 		return false
-	}
-}
-
-// MARK: - Protocols for Virtual Objects
-
-protocol ReactsToScale {
-	func reactToScale()
-}
-
-extension SCNNode {
-	
-	func reactsToScale() -> ReactsToScale? {
-		if let canReact = self as? ReactsToScale {
-			return canReact
-		}
-		
-		if parent != nil {
-			return parent!.reactsToScale()
-		}
-		
-		return nil
 	}
 }

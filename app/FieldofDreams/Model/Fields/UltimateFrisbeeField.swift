@@ -8,7 +8,7 @@
 import ARKit
 
 struct UltimateFrisbeeField: EndzoneField {
-    var unit: UnitLength = .yards
+    var unit: UnitLength = .inches //.yards
     var width = 40.0
     var endzoneDepth = 25.0
     var playingFieldProper = 70.0

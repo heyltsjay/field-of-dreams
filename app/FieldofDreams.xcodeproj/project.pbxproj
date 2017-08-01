@@ -20,6 +20,7 @@
 		00E243C31F2BD1690040FCAC /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E243C21F2BD1690040FCAC /* Field.swift */; };
 		00E243C51F2BD2320040FCAC /* UltimateFrisbeeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */; };
 		00E243C71F2C00880040FCAC /* EndzoneField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E243C61F2C00880040FCAC /* EndzoneField.swift */; };
+		00EE62C81F2F96880038BE8A /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE62C71F2F96880038BE8A /* ARSceneViewController.swift */; };
 		2D6E54781E9D16AA00690B0A /* APISerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6E54771E9D16AA00690B0A /* APISerialization.swift */; };
 		2D6E547A1E9D16F200690B0A /* APIValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6E54791E9D16F200690B0A /* APIValidation.swift */; };
 		2DAB59F61E9531F700310ABF /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB59F51E9531F700310ABF /* Closures.swift */; };
@@ -101,6 +102,7 @@
 		00E243C21F2BD1690040FCAC /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateFrisbeeField.swift; sourceTree = "<group>"; };
 		00E243C61F2C00880040FCAC /* EndzoneField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndzoneField.swift; sourceTree = "<group>"; };
+		00EE62C71F2F96880038BE8A /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
 		0B68FC2C40AE35C100C8E0A5 /* Pods-FieldofDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FieldofDreams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FieldofDreams/Pods-FieldofDreams.debug.xcconfig"; sourceTree = "<group>"; };
 		17DC86D175CE0686878A3A82 /* Pods-FieldofDreams-FieldofDreamsTests.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FieldofDreams-FieldofDreamsTests.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-FieldofDreams-FieldofDreamsTests/Pods-FieldofDreams-FieldofDreamsTests.sprint.xcconfig"; sourceTree = "<group>"; };
 		18117B6A27EAD54897E61F7E /* Pods-FieldofDreams-FieldofDreamsTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FieldofDreams-FieldofDreamsTests.develop.xcconfig"; path = "Pods/Target Support Files/Pods-FieldofDreams-FieldofDreamsTests/Pods-FieldofDreams-FieldofDreamsTests.develop.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				0097E9081F2BB61500AF3139 /* FieldPlacementViewController.swift */,
+				00EE62C71F2F96880038BE8A /* ARSceneViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				ABF84FA21DCBCB87002DB24D /* Marshal+Utility.swift in Sources */,
 				ABC778EA1DC951B900815FB9 /* LoggingConfiguration.swift in Sources */,
 				00E243C31F2BD1690040FCAC /* Field.swift in Sources */,
+				00EE62C81F2F96880038BE8A /* ARSceneViewController.swift in Sources */,
 				BE4C21EB1E81970A00645143 /* DebugMenuConfiguration.swift in Sources */,
 				ABF84F9A1DCB70BB002DB24D /* Alamofire+FieldofDreams.swift in Sources */,
 				006EFEF21F2641C9004A95DE /* APIClient+FieldofDreams.swift in Sources */,
