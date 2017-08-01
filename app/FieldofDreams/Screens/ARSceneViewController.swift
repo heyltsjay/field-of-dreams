@@ -13,6 +13,7 @@ class ARSceneViewController: UIViewController {
 
     let sceneView = ARSCNView()
     var focusSquare = FocusSquare()
+    fileprivate var childNode: SCNNode?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,24 @@ extension ARSceneViewController {
         return CGPoint(x: sceneView.bounds.midX, y: sceneView.bounds.midY)
     }
 
+    func addChildNodeAtFocus(_ child: SCNNode) {
+        guard let cameraTransform = sceneView.session.currentFrame?.camera.transform else {
+            return
+        }
+        let pos = focusSquare.lastPosition ?? SCNVector3Zero
+        let cameraWorldPos = SCNVector3.positionFromTransform(cameraTransform)
+        let cameraToPosition = pos - cameraWorldPos
+        let origin = cameraWorldPos + cameraToPosition
+        child.position = origin
+        sceneView.scene.rootNode.addChildNode(child)
+        self.childNode = child
+    }
+
+    func removeChildNode() {
+        childNode?.removeFromParentNode()
+        childNode = nil
+    }
+
 }
 
 extension ARSceneViewController {
@@ -63,13 +82,14 @@ extension ARSceneViewController {
         if focusSquare.parent == nil {
             sceneView.scene.rootNode.addChildNode(focusSquare)
         }
-// TODO
-//        if !cones.isEmpty && sceneView.isNode(cones.first!, insideFrustumOf: sceneView.pointOfView!) {
-//            focusSquare.hide()
-//        }
-//        else {
+
+        if let child = childNode, sceneView.isNode(child, insideFrustumOf: sceneView.pointOfView!) {
+            focusSquare.hide()
+        }
+        else {
             focusSquare.unhide()
-//        }
+        }
+
         let (worldPos, planeAnchor, _) = worldPositionFromScreenPosition(screenCenter, objectPos: focusSquare.position)
         if let worldPos = worldPos {
             focusSquare.update(for: worldPos, planeAnchor: planeAnchor, camera: sceneView.session.currentFrame?.camera)
