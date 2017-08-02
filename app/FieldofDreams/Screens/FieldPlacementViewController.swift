@@ -12,7 +12,7 @@ import SceneKit
 class FieldPlacementViewController: ARSceneViewController {
 
     let field: SCNNode = {
-        let field = UltimateFrisbeeField()
+        let field = ThreeConeLDrill()
         return field.node
     }()
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003D4F781F32380B0037CB87 /* ThreeConeLDrill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D4F771F32380B0037CB87 /* ThreeConeLDrill.swift */; };
 		00460D541F2C30860011E80B /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00460D531F2C30860011E80B /* FocusSquare.swift */; };
 		00460D561F2C31B90011E80B /* ARKitUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00460D551F2C31B90011E80B /* ARKitUtilities.swift */; };
 		00460D5C1F2C36EC0011E80B /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00460D5B1F2C36EC0011E80B /* VirtualObject.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		003D4F771F32380B0037CB87 /* ThreeConeLDrill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeConeLDrill.swift; sourceTree = "<group>"; };
 		00460D531F2C30860011E80B /* FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		00460D551F2C31B90011E80B /* ARKitUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitUtilities.swift; sourceTree = "<group>"; };
 		00460D5B1F2C36EC0011E80B /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
@@ -194,6 +196,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003D4F741F3237A10037CB87 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */,
+			);
+			path = Fields;
+			sourceTree = "<group>";
+		};
+		003D4F751F3237AC0037CB87 /* Drills */ = {
+			isa = PBXGroup;
+			children = (
+				003D4F771F32380B0037CB87 /* ThreeConeLDrill.swift */,
+			);
+			path = Drills;
+			sourceTree = "<group>";
+		};
 		00460D621F2C44EA0011E80B /* ARHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +229,8 @@
 				00E243C21F2BD1690040FCAC /* Field.swift */,
 				0056857A1F31390C00F6262B /* Field+AR.swift */,
 				00E243C61F2C00880040FCAC /* EndzoneField.swift */,
-				00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */,
+				003D4F741F3237A10037CB87 /* Fields */,
+				003D4F751F3237AC0037CB87 /* Drills */,
 			);
 			path = Fields;
 			sourceTree = "<group>";
@@ -743,6 +762,7 @@
 				ABF84F911DC99D33002DB24D /* Localized.swift in Sources */,
 				ABC778E81DC9503600815FB9 /* InstabugConfiguration.swift in Sources */,
 				00460D5E1F2C36F20011E80B /* Lamp.swift in Sources */,
+				003D4F781F32380B0037CB87 /* ThreeConeLDrill.swift in Sources */,
 				BE28092B1E802893006E50D5 /* AnalyticsPageNames.swift in Sources */,
 				ABC778DF1DC94F0900815FB9 /* BuildType.swift in Sources */,
 				ABC778E61DC94FFC00815FB9 /* CrashlyticsConfiguration.swift in Sources */,
