@@ -17,7 +17,7 @@ extension Field {
             vertextNode.position = SCNVector3(scaled(vertex.x), 0, scaled(-vertex.y))
 
             vertextNode.addChildNode(ConeNode())
-            //vertextNode.addChildNode(PillarNode())
+            vertextNode.addChildNode(PillarNode())
 
             fieldNode.addChildNode(vertextNode)
         }
@@ -39,11 +39,12 @@ fileprivate extension Field {
 
     func PillarNode() -> SCNNode {
         let height = CGFloat(2)
-        let radius = CGFloat(0.02)
+        let radius = CGFloat(0.08)
         let cylinder = SCNNode(
             geometry: SCNCylinder(radius: radius,
                                   height: height)
         )
+        cylinder.opacity = 0.2
         cylinder.pivot = SCNMatrix4MakeTranslation(0, -Float(height / 2), 0)
         return cylinder
     }
@@ -51,8 +52,8 @@ fileprivate extension Field {
     func LineNode(_ line: Line) -> SCNNode {
         let x1 = scaled(line.start.x)
         let x2 = scaled(line.end.x)
-        let y1 = scaled(line.start.y)
-        let y2 = scaled(line.end.y)
+        let y1 = scaled(-line.start.y)
+        let y2 = scaled(-line.end.y)
         let length = CGFloat(hypot(x1 - x2, y1 - y2))
         let rotation = atan2(x2 - x1, y2 - y1)
         let width = CGFloat(0.06)
