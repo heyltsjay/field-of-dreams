@@ -14,7 +14,7 @@ extension Field {
 
         verticies.forEach { vertex in
             let vertextNode = SCNNode()
-            vertextNode.position = SCNVector3(scaled(vertex.x), 0, scaled(vertex.y))
+            vertextNode.position = SCNVector3(scaled(vertex.x), 0, scaled(-vertex.y))
 
             vertextNode.addChildNode(ConeNode())
             //vertextNode.addChildNode(PillarNode())
