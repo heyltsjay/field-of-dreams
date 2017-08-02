@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		003D4F781F32380B0037CB87 /* ThreeConeLDrill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D4F771F32380B0037CB87 /* ThreeConeLDrill.swift */; };
+		003D4F7A1F323EF60037CB87 /* SmallTestField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D4F791F323EF60037CB87 /* SmallTestField.swift */; };
+		003D4F7C1F32436C0037CB87 /* BeachUltimateFrisbee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D4F7B1F32436C0037CB87 /* BeachUltimateFrisbee.swift */; };
 		00460D541F2C30860011E80B /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00460D531F2C30860011E80B /* FocusSquare.swift */; };
 		00460D561F2C31B90011E80B /* ARKitUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00460D551F2C31B90011E80B /* ARKitUtilities.swift */; };
 		00460D5C1F2C36EC0011E80B /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00460D5B1F2C36EC0011E80B /* VirtualObject.swift */; };
@@ -92,6 +94,8 @@
 
 /* Begin PBXFileReference section */
 		003D4F771F32380B0037CB87 /* ThreeConeLDrill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeConeLDrill.swift; sourceTree = "<group>"; };
+		003D4F791F323EF60037CB87 /* SmallTestField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTestField.swift; sourceTree = "<group>"; };
+		003D4F7B1F32436C0037CB87 /* BeachUltimateFrisbee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachUltimateFrisbee.swift; sourceTree = "<group>"; };
 		00460D531F2C30860011E80B /* FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		00460D551F2C31B90011E80B /* ARKitUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitUtilities.swift; sourceTree = "<group>"; };
 		00460D5B1F2C36EC0011E80B /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
@@ -199,7 +203,9 @@
 		003D4F741F3237A10037CB87 /* Fields */ = {
 			isa = PBXGroup;
 			children = (
+				003D4F791F323EF60037CB87 /* SmallTestField.swift */,
 				00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */,
+				003D4F7B1F32436C0037CB87 /* BeachUltimateFrisbee.swift */,
 			);
 			path = Fields;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				2D6E54781E9D16AA00690B0A /* APISerialization.swift in Sources */,
 				2DAB59F61E9531F700310ABF /* Closures.swift in Sources */,
 				ABF84F8D1DC99CFD002DB24D /* TextStyle.swift in Sources */,
+				003D4F7C1F32436C0037CB87 /* BeachUltimateFrisbee.swift in Sources */,
 				ABF84FA21DCBCB87002DB24D /* Marshal+Utility.swift in Sources */,
 				ABC778EA1DC951B900815FB9 /* LoggingConfiguration.swift in Sources */,
 				00E243C31F2BD1690040FCAC /* Field.swift in Sources */,
@@ -755,6 +762,7 @@
 				ABC778C91DC927C900815FB9 /* Formatters.swift in Sources */,
 				BE28092C1E802893006E50D5 /* GoogleAnalytics.swift in Sources */,
 				2D6E547A1E9D16F200690B0A /* APIValidation.swift in Sources */,
+				003D4F7A1F323EF60037CB87 /* SmallTestField.swift in Sources */,
 				ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */,
 				2DFF1D161E8BF38F00B1AD70 /* UIColor+Extensions.swift in Sources */,
 				2DFF1CEB1E89423000B1AD70 /* UserDefaults+Utility.swift in Sources */,
