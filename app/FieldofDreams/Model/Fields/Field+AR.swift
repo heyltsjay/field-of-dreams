@@ -17,7 +17,7 @@ extension Field {
             vertextNode.position = SCNVector3(scaled(vertex.x), 0, scaled(vertex.y))
 
             vertextNode.addChildNode(ConeNode())
-            vertextNode.addChildNode(PillarNode())
+            //vertextNode.addChildNode(PillarNode())
 
             fieldNode.addChildNode(vertextNode)
         }
@@ -34,9 +34,7 @@ extension Field {
 fileprivate extension Field {
 
     func ConeNode() -> SCNNode {
-        let cone = Lamp()
-        cone.loadModel()
-        return cone
+        return Cone()
     }
 
     func PillarNode() -> SCNNode {
@@ -67,7 +65,7 @@ fileprivate extension Field {
         )
         lineNode.position = SCNVector3(x1, 0, y1)
         lineNode.rotation = SCNVector4Make(0, 1, 0, Float(rotation))
-        lineNode.pivot = SCNMatrix4MakeTranslation(0, Float(-height/2), Float(-length/2))
+        lineNode.pivot = SCNMatrix4MakeTranslation(0, Float(height/2), Float(-length/2))
         return lineNode
     }
 

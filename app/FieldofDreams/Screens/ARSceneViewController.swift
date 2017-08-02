@@ -33,6 +33,10 @@ class ARSceneViewController: UIViewController {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingSessionConfiguration()
         configuration.planeDetection = .horizontal
+        configuration.isLightEstimationEnabled = true
+        sceneView.antialiasingMode = .multisampling4X
+        sceneView.preferredFramesPerSecond = 60
+        sceneView.autoenablesDefaultLighting = true
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }

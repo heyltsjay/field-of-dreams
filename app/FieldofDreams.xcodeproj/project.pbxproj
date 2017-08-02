@@ -22,6 +22,7 @@
 		00E243C51F2BD2320040FCAC /* UltimateFrisbeeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */; };
 		00E243C71F2C00880040FCAC /* EndzoneField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E243C61F2C00880040FCAC /* EndzoneField.swift */; };
 		00EE62C81F2F96880038BE8A /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE62C71F2F96880038BE8A /* ARSceneViewController.swift */; };
+		00FB93A11F32147D008801CD /* Cone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FB93A01F32147D008801CD /* Cone.swift */; };
 		2D6E54781E9D16AA00690B0A /* APISerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6E54771E9D16AA00690B0A /* APISerialization.swift */; };
 		2D6E547A1E9D16F200690B0A /* APIValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6E54791E9D16F200690B0A /* APIValidation.swift */; };
 		2DAB59F61E9531F700310ABF /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB59F51E9531F700310ABF /* Closures.swift */; };
@@ -105,6 +106,7 @@
 		00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateFrisbeeField.swift; sourceTree = "<group>"; };
 		00E243C61F2C00880040FCAC /* EndzoneField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndzoneField.swift; sourceTree = "<group>"; };
 		00EE62C71F2F96880038BE8A /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
+		00FB93A01F32147D008801CD /* Cone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cone.swift; sourceTree = "<group>"; };
 		0B68FC2C40AE35C100C8E0A5 /* Pods-FieldofDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FieldofDreams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FieldofDreams/Pods-FieldofDreams.debug.xcconfig"; sourceTree = "<group>"; };
 		17DC86D175CE0686878A3A82 /* Pods-FieldofDreams-FieldofDreamsTests.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FieldofDreams-FieldofDreamsTests.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-FieldofDreams-FieldofDreamsTests/Pods-FieldofDreams-FieldofDreamsTests.sprint.xcconfig"; sourceTree = "<group>"; };
 		18117B6A27EAD54897E61F7E /* Pods-FieldofDreams-FieldofDreamsTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FieldofDreams-FieldofDreamsTests.develop.xcconfig"; path = "Pods/Target Support Files/Pods-FieldofDreams-FieldofDreamsTests/Pods-FieldofDreams-FieldofDreamsTests.develop.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				00460D5D1F2C36F20011E80B /* Lamp.swift */,
 				00460D5B1F2C36EC0011E80B /* VirtualObject.swift */,
 				00460D531F2C30860011E80B /* FocusSquare.swift */,
+				00FB93A01F32147D008801CD /* Cone.swift */,
 			);
 			path = ARHelpers;
 			sourceTree = "<group>";
@@ -205,20 +208,12 @@
 		00E243C11F2BD1560040FCAC /* Fields */ = {
 			isa = PBXGroup;
 			children = (
-				00E243CE1F2C1E560040FCAC /* Protocols */,
-				00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */,
-			);
-			path = Fields;
-			sourceTree = "<group>";
-		};
-		00E243CE1F2C1E560040FCAC /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
 				00E243C21F2BD1690040FCAC /* Field.swift */,
 				0056857A1F31390C00F6262B /* Field+AR.swift */,
 				00E243C61F2C00880040FCAC /* EndzoneField.swift */,
+				00E243C41F2BD2320040FCAC /* UltimateFrisbeeField.swift */,
 			);
-			path = Protocols;
+			path = Fields;
 			sourceTree = "<group>";
 		};
 		2DFF1D141E8BF37C00B1AD70 /* Extensions */ = {
@@ -753,6 +748,7 @@
 				BE28092E1E8029D8006E50D5 /* AnalyticsConfiguration.swift in Sources */,
 				00460D541F2C30860011E80B /* FocusSquare.swift in Sources */,
 				ABF84F7F1DC970E8002DB24D /* APIClient.swift in Sources */,
+				00FB93A11F32147D008801CD /* Cone.swift in Sources */,
 				ABF84F981DCAB3B9002DB24D /* APIConstants.swift in Sources */,
 				ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */,
 				00E243C71F2C00880040FCAC /* EndzoneField.swift in Sources */,

@@ -16,8 +16,7 @@ class VirtualObject: SCNNode {
 	var thumbImage: UIImage!
 	var title: String = ""
 	var modelLoaded: Bool = false
-    var locationTransform: SCNVector3?
-	
+
 	override init() {
 		super.init()
 		self.name = "Virtual object root node"
@@ -30,6 +29,7 @@ class VirtualObject: SCNNode {
 		self.fileExtension = fileExtension
 		self.thumbImage = UIImage(named: thumbImageFilename)
 		self.title = title
+        loadModel()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
