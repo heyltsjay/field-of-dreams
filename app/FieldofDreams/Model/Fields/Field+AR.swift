@@ -6,6 +6,7 @@
 //
 
 import ARKit
+import SceneKit
 
 extension Field {
 
@@ -17,7 +18,8 @@ extension Field {
             vertextNode.position = SCNVector3(scaled(vertex.x), 0, scaled(-vertex.y))
 
             vertextNode.addChildNode(ConeNode())
-            vertextNode.addChildNode(PillarNode())
+            //TODO: Pillars only show when they are some distance away
+            //vertextNode.addChildNode(PillarNode())
 
             fieldNode.addChildNode(vertextNode)
         }
@@ -38,14 +40,16 @@ fileprivate extension Field {
     }
 
     func PillarNode() -> SCNNode {
-        let height = CGFloat(2)
-        let radius = CGFloat(0.08)
+        let height = CGFloat(10)
+        let radius = CGFloat(0.1)
         let cylinder = SCNNode(
             geometry: SCNCylinder(radius: radius,
                                   height: height)
         )
         cylinder.opacity = 0.2
+        cylinder.geometry?.firstMaterial?.diffuse.contents = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.1294117647, alpha: 1)
         cylinder.pivot = SCNMatrix4MakeTranslation(0, -Float(height / 2), 0)
+        cylinder.position = SCNVector3(0, 0, 0)
         return cylinder
     }
 
@@ -64,6 +68,8 @@ fileprivate extension Field {
                              length: length,
                              chamferRadius: 0)
         )
+        lineNode.opacity = 0.7
+        lineNode.geometry?.firstMaterial?.diffuse.contents = UIColor.white
         lineNode.position = SCNVector3(x1, 0, y1)
         lineNode.rotation = SCNVector4Make(0, 1, 0, Float(rotation))
         lineNode.pivot = SCNMatrix4MakeTranslation(0, Float(height/2), Float(-length/2))
