@@ -12,7 +12,7 @@ import SceneKit
 class FieldPlacementViewController: ARSceneViewController {
 
     let field: SCNNode = {
-        let field = SmallTestField()
+        let field = ShoeField()
         return field.node
     }()
 

@@ -18,3 +18,16 @@ class Cone: VirtualObject {
     }
 
 }
+
+class Shoe: VirtualObject {
+
+    override init() {
+        super.init(modelName: "shoe", fileExtension: "scn", thumbImageFilename: "shoe", title: "Shoe")
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
+

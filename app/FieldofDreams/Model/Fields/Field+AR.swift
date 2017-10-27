@@ -36,9 +36,9 @@ extension Field {
 fileprivate extension Field {
 
     func ConeNode() -> SCNNode {
-        return Cone()
+        return Shoe()
     }
-
+  
     func PillarNode() -> SCNNode {
         let height = CGFloat(10)
         let radius = CGFloat(0.1)
