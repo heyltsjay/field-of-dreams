@@ -1031,13 +1031,14 @@
 			baseConfigurationReference = 0B68FC2C40AE35C100C8E0A5 /* Pods-FieldofDreams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 336S848KQ4;
 				INFOPLIST_FILE = FieldofDreams/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PROVISIONING_PROFILE = "7c4a5965-f515-42a6-9077-0f8be0176d10";
-				PROVISIONING_PROFILE_SPECIFIER = "Raizlabs Generic App";
+				PROVISIONING_PROFILE = "9802023c-2d03-4dcb-b40f-cbe7fe8f874e";
+				PROVISIONING_PROFILE_SPECIFIER = "Raizlabs Wildcard App ID";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
