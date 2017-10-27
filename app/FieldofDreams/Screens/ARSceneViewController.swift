@@ -31,7 +31,7 @@ class ARSceneViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let configuration = ARWorldTrackingSessionConfiguration()
+        let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         configuration.isLightEstimationEnabled = true
         sceneView.antialiasingMode = .multisampling4X
