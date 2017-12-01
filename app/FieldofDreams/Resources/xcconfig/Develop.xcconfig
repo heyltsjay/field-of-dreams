@@ -14,7 +14,7 @@ PRODUCT_NAME = develop-$(TARGET_NAME)
 DEVELOPMENT_TEAM = XRTVVR644Y // Insert develop TEAM ID here
 
 CODE_SIGN_IDENTITY_FieldofDreams = iPhone Distribution
-PROVISIONING_PROFILE_FieldofDreams = Raizlabs_Generic_Enterprise_Distribution_Profile // Insert develop provisioning profile ID
+PROVISIONING_PROFILE_FieldofDreams = 8306df8a-75ef-4479-b0df-a8b619573e09 // Insert develop provisioning profile ID
 // CODE_SIGN_ENTITLEMENTS = FieldofDreams/develop-FieldofDreams.entitlements // Enable to allow custom debug entitlements
 
 FABRIC_API_KEY = $(INTERNAL_FABRIC_API_KEY)

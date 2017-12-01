@@ -545,7 +545,7 @@
 					};
 					ABC778881DC90B7A00815FB9 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 336S848KQ4;
+						DevelopmentTeam = XRTVVR644Y;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ABC778741DC90B7A00815FB9;
@@ -1055,8 +1055,8 @@
 				INFOPLIST_FILE = FieldofDreams/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PROVISIONING_PROFILE = "9ad42e63-bab9-47d9-ac7c-43d47083277c";
-				PROVISIONING_PROFILE_SPECIFIER = "Raizlabs Generic Enterprise Distribution Profile";
+				PROVISIONING_PROFILE = "8306df8a-75ef-4479-b0df-a8b619573e09";
+				PROVISIONING_PROFILE_SPECIFIER = "Raizlabs Generic Enterprise Profile";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

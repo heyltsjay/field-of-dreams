@@ -9,12 +9,12 @@
 #include "FieldofDreams/Resources/xcconfig/Raizlabs-Account.xcconfig"
 #include "FieldofDreams/Resources/xcconfig/Global.xcconfig"
 
-PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.FieldofDreams.debug
+PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.FieldofDreams.debug2
 PRODUCT_NAME = debug-$(TARGET_NAME)
 DEVELOPMENT_TEAM = 336S848KQ4 // Insert debug TEAM ID here
 
 CODE_SIGN_IDENTITY_FieldofDreams = iPhone Developer
-PROVISIONING_PROFILE_FieldofDreams = 7c4a5965-f515-42a6-9077-0f8be0176d10 // Insert debug provisioning profile ID
+PROVISIONING_PROFILE_FieldofDreams = a96842a4-4c53-4dd5-9561-14ef91f9b19c // Insert debug provisioning profile ID
 // CODE_SIGN_ENTITLEMENTS = FieldofDreams/debug-FieldofDreams.entitlements // Enable to allow custom debug entitlements
 
 FABRIC_API_KEY = $(INTERNAL_FABRIC_API_KEY)
