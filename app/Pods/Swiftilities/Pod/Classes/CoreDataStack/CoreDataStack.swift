@@ -78,7 +78,7 @@ public class CoreDataStack {
             description = PersistentStoreDescription()
         }
 
-        self.init(name: name, managedObjectModel: model)
+        self.init(name: name, managedObjectModel: model!)
 
         self.persistantStoreDescriptions = [description]
     }
